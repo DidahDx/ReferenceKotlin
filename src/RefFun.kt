@@ -3,11 +3,19 @@ fun main() {
     sayHello()
     hello("World")
     hello("where is the", "World")
+
+    hello(greeting = "where is the", customGreeting = "World")
+    hello(greeting = "where is the")
     makingArrays()
 
     val list=listOf("cars","sffs","guys")
+    val bac= arrayOf("cars","sffs","guys")
     sayHello(list)
     sayHello("HEY","list","car","bmw","cat")
+
+    //spread operator
+    sayHello("HEY",*bac)
+
 }
 
 fun getGreeting(): String {
@@ -37,8 +45,8 @@ fun hello(customGreeting: String) {
     println("Hello $customGreeting")
 }
 
-//fun using string template
-fun hello(greeting: String, customGreeting: String) = println("$greeting $customGreeting")
+//fun using string template with parameter default values
+fun hello(greeting: String="hey", customGreeting: String="Kotlin") = println("$greeting $customGreeting")
 
 //single expression of fun and type inference
 fun someGreeting() = "Hi"
