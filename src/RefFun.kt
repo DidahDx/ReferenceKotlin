@@ -4,6 +4,10 @@ fun main() {
     hello("World")
     hello("where is the", "World")
     makingArrays()
+
+    val list=listOf("cars","sffs","guys")
+    sayHello(list)
+    sayHello("HEY","list","car","bmw","cat")
 }
 
 fun getGreeting(): String {
@@ -13,6 +17,20 @@ fun getGreeting(): String {
 //Unit is used when fun does not return anything
 fun sayHello(): Unit {
     println("Hello")
+}
+
+//passing a collection
+fun sayHello(greeting:List<String>){
+    greeting.forEach {items->
+        println(" HEY $items")
+    }
+}
+
+//using vararg
+fun sayHello(hey:String,vararg greeting: String){
+    greeting.forEach {items->
+        println(" HEY $items")
+    }
 }
 
 fun hello(customGreeting: String) {
