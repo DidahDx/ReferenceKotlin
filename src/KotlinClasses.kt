@@ -1,7 +1,8 @@
 
     fun main(){
 
-        val person=Person("sdfg","dfg")
-        println(person.Name)
-        println(person.Sona)
+//        val person=Person("sdfg","dfg")
+        val person=Person()
+        println(person.name)
+        println(person.sona)
     }
