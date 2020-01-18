@@ -1,3 +1,5 @@
+import org.omg.CORBA.Object
+
 interface PersonInfoProvider {
     val provider: String
     fun printInfo(person: Person) {
@@ -44,6 +46,17 @@ fun main() {
     provider.printInfo(Person())
     println(provider.getSessionId())
     checkTypes(provider)
+
+    //creating anonymous inner class
+    val provider2= object : PersonInfoProvider{
+        override val provider: String
+            get() = "New Info Provider"
+
+        fun getSessionId()="123"
+    }
+
+    provider2.printInfo(Person())
+    println(provider2.getSessionId())
 }
 
 //checking the types of
