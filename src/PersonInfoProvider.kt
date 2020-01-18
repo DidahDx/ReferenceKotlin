@@ -13,13 +13,18 @@ interface SessionInfoProvider{
 
 
 //implementing an interface
-class BasicInfo : PersonInfoProvider, SessionInfoProvider {
-    override fun getSessionId(): String {
-        return "12"
-    }
+//adding open keyword in order to inherit from this class
+open class BasicInfo : PersonInfoProvider, SessionInfoProvider {
 
     override val provider: String
         get() = "Basic"
+
+    //not to be accessed outside
+    protected open val sessionIdPrefix="12"
+
+    override fun getSessionId(): String {
+        return sessionIdPrefix
+    }
 
     //overiding with a default implementation
     override fun printInfo(person: Person) {
